@@ -13,9 +13,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "item")
+@AllArgsConstructor
 public class Item {
 
 	@Id
@@ -34,8 +36,8 @@ public class Item {
 	@Column(nullable = false)
 	@JsonProperty
 	private String description;
-	
-	@Override
+
+    @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
