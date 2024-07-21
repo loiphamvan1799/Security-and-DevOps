@@ -37,6 +37,7 @@ public class OrderController {
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
 			log.error("Error OrderController: User \"" + username + "\" cannot be found");
+			log.info("Error OrderController: Order requests failures for user \"" + username + "\"");
 			return ResponseEntity.notFound().build();
 		}
 		UserOrder order = UserOrder.createFromCart(user.getCart());
